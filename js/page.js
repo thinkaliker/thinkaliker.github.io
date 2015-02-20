@@ -8,55 +8,55 @@ app.config(function($routeProvider, $locationProvider) {
     $routeProvider.when(
         '/',
         {
-            templateUrl: '/home.php'
+            templateUrl: '/home.html'
         }
     );
     $routeProvider.when(
         '/projects',
         {
-            templateUrl: '/projects.php'
+            templateUrl: '/projects.html'
         }
     );
     $routeProvider.when(
         '/about',
         {
-            templateUrl: '/about.php'
+            templateUrl: '/about.html'
         }
     );
     $routeProvider.when(
         '/links',
         {
-            templateUrl: '/links.php'
+            templateUrl: '/links.html'
         }
     );
     $routeProvider.when(
         '/400',
         {
-            templateUrl: '/400.php'
+            templateUrl: '/400.html'
         }
     );
     $routeProvider.when(
         '/401',
         {
-            templateUrl: '/401.php'
+            templateUrl: '/401.html'
         }
     );
     $routeProvider.when(
         '/403',
         {
-            templateUrl: '/403.php'
+            templateUrl: '/403.html'
         }
     );
     $routeProvider.when(
         '/404',
         {
-            templateUrl: '/404.php'
+            templateUrl: '/404.html'
         }
     );
     $routeProvider.when(
         '/500',
         {
-            templateUrl: '/500.php'
+            templateUrl: '/500.html'
         }
     );
     $routeProvider.otherwise(
