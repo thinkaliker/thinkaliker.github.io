@@ -4,10 +4,18 @@
 <head>
   <title>thinkaliker CDN</title>
   <style>
+    /* https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/aligner.css */
     .Aligner {
       display: flex;
       align-items: center;
+      height: 24em;
       justify-content: center;
+    }
+    @supports not (-ms-flex: 1) {
+      .Aligner {
+        height: auto;
+        min-height: 24em;
+      }
     }
     .Aligner-item {
       flex: 1;
