@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Counter</title>
+</head>
+<body>
+<h1>Counter</h1>
+Type the number of people you see going in or out and click the button to log that number with a timestamp. You can also press enter inside the textbox after entering data to log. Data is not stored anywhere so if you refresh, you lose it.
+<h1>IN</h1>
+<input type="text" name="in" value="" id="in"> <button onclick="log(1)">log with timestamp</button>
+<h1>OUT</h1>
+<input type="text" name="out" value="" id="out"> <button onclick="log(2)">log with timestamp</button>
+<h1>Results</h1>
+<h2>In results</h2>
+<div id="in-result"></div>
+<h2>Out results</h2>
+<div id="out-result"></div>
+<script>
+    var inarr = [];
+    var outarr = [];
+    function log(invalue) {
+        if (invalue == 1) {
+            var input = document.getElementById('in');
+            inarr.push( input.value + ',' + Date.now());
+            input.value="";
+            var newstr = inarr[inarr.length-1] + '<br/>';
+            document.getElementById("in-result").innerHTML += newstr;
+        } else {
+            var input = document.getElementById('out');
+            outarr.push( input.value + ',' + Date.now());
+            input.value="";
+            var newstr = outarr[outarr.length-1] + '<br/>';
+            document.getElementById("out-result").innerHTML += newstr;
+        }
+        localStorage.setItem('in', inarr);
+        localStorage.setItem('out', outarr);
+    }
+
+    document.getElementById('in').addEventListener("keyup", function(event) {
+       event.preventDefault();
+       if (event.keyCode == 13) {
+           log(1);
+       }
+    });
+    document.getElementById('out').addEventListener("keyup", function(event) {
+       event.preventDefault();
+       if (event.keyCode == 13) {
+           log(2);
+       }
+    });
+</script>
+</body>
+</html>
